@@ -49,4 +49,54 @@ public class LogicalOp {
         }
     }
 
+    //6. Creati o metoda in clasa LogicalOp care sa afiseze toate numerele impare de la 1 la 100.
+    public void printOddNumbers() {
+
+        for (int i = 0; i <= 100; i++) {
+            if (i % 2 != 0) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+
+    //7. Creati o metoda in clasa LogicalOp care sa primeasca un parametru de tip numar.
+    // Metoda sa adune toate numerele pana la 100, pornind de la numarul primit ca si parametru,
+    // iar la final sa returneze rezultatul.
+    // Apelati metoda in clasa Main, metoda main() pentru a verifica daca functioneaza.
+
+    public int calculateSumFromGivenNumber(int number) {
+        int sum = 0;
+        for (int i = number; i <= 100; i++) {
+            sum = sum + i;
+        }
+        return sum;
+    }
+
+    //8. Creati o metoda in clasa LogicalOp care sa primeasca un parametru de tip numar.
+    // Metoda sa adune toate numerele pana la 100, pornind de la numarul primit ca si parametru,
+    // si sa calculeze media numerelor.
+    // La final, metoda sa returneze media.
+    // Apelati metoda in clasa Main, metoda main() pentru a verifica daca functioneaza.
+
+    public double calculateSumAndAverageFromGivenNumber(int number) {
+        int count = 0;
+        int sum = 0;
+        for (int i = number; i <= 100; i++) {
+            count++;
+            sum = sum + i;
+        }
+        return (double) sum / count;
+    }
+
+    // 9.  Creati o metoda in clasa LogicalOp care sa afiseze urmatorul tipar:
+    public void createPattern() {
+        for (int i = 7; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+
 }
