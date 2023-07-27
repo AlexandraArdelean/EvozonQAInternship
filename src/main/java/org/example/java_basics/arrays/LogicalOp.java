@@ -62,4 +62,82 @@ public class LogicalOp {
         return false;
     }
 
+    //6. Creati o metoda care sa primeasca un parametru de tip array de numere, populat cu valori,
+    // si un parametru de tip numar. Metoda sa verifice daca numarul primit se afla in array-ul primit,
+    // si daca da, atunci sa returneze pozitia pe care se afla numarul.
+    // Apelati metoda in main() pentru a verifica daca functioneaza.
+
+    public int returnNumberPositionFromArray(int[] array, int num) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == num) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
+    //7. Creati o metoda care sa afiseze urmatoarea grila, folosind un array:
+    public void createPrint(int rows, int columns) {
+        char[][] charArray = new char[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                charArray[i][j] = '-';
+            }
+        }
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print(charArray[i][j]);
+            }
+            System.out.println();
+        }
+
+    }
+
+    //8. Creati o metoda care sa primeasca un parametru de tip array de numere, populat cu valori, si un parametru de tip numar.
+    // Metoda sa verifice daca numarul exista in array, si daca da, sa returneze array-ul primit, fara acel numar.
+    // Apelati metoda in main() pentru a verifica daca functioneaza.
+
+    public int[] printArrayWithoutGivenNumber(int[] myArray, int givenNumber) {
+        int index = 0;
+        int[] copyArray = new int[myArray.length - 1];
+        for (int i = 0; i < myArray.length; i++) {
+            if (myArray[i] == givenNumber) {
+                index = i;
+            }
+        }
+
+        for (int i = 0, k = 0; i < myArray.length; i++) {
+            if (i == index) {
+                continue;
+            }
+
+            copyArray[k++] = myArray[i];
+        }
+
+        return copyArray;
+    }
+
+    //9. Creati o metoda care sa primeasca un array, si sa returneze al doilea cel mai mic numar din array.
+    // Apelati metoda in main() pentru a verifica daca functioneaza.
+
+    public int printSecondSmallerNumberFromArray(int[] givenArray) {
+        Arrays.sort(givenArray);
+        return givenArray[1];
+    }
+
+    //10. Creati o metoda care sa primeasca doi parametrii: un array populat cu valori, si un array gol.
+    // Metoda sa copieze toate valorile din primul array, parcurgandu-l, in cel de-al doilea.
+    // Apelati metoda in main() pentru a verifica daca functioneaza.
+
+    public void copyFromGivenArray(int[] givenArray, int[] copiedArray) {
+        if (givenArray.length != copiedArray.length) {
+            System.out.println("Arrays lengths are not equal!");
+        }
+
+        for (int i = 0; i < givenArray.length; i++) {
+            copiedArray[i] = givenArray[i];
+        }
+    }
+
 }
