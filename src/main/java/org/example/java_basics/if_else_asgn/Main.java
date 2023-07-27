@@ -1,5 +1,7 @@
 package org.example.java_basics.if_else_asgn;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
@@ -16,5 +18,13 @@ public class Main {
         System.out.println(logicalOp.printMessage("Evozon", 3));
         System.out.println(logicalOp.printMessage("Evozon", 9));
         System.out.println(logicalOp.printWeatherForecast(10));
+        System.out.println(logicalOp.printNumber(2));
+        System.out.println(logicalOp.isNumberEven(23));
+        System.out.println(logicalOp.isEligibleToVote(19));
+        System.out.println(logicalOp.greaterNumber(3,5,10));
+
+
+
+
     }
 }
