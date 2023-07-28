@@ -2,14 +2,21 @@ package org.example;
 
 import java.util.Objects;
 
-public class AnimalRescuer {
+public abstract class AnimalRescuer {
     private String name;
     private int moneyAmount;
+
+    public AnimalRescuer() {
+    }
 
     public AnimalRescuer(String name, int moneyAmount) {
         this.name = name;
         this.moneyAmount = moneyAmount;
     }
+    public abstract void goToVet();
+    public abstract void rescueAnimal();
+    public abstract void feedAnimal();
+    public abstract void doExercises();
 
     public String getName() {
         return name;

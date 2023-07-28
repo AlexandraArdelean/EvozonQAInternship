@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Objects;
 
-public class Animal {
+public abstract class Animal {
     private String name;
     private int age;
     private int healthLevel;
@@ -10,8 +10,15 @@ public class Animal {
     private int spiritMood;
     private AnimalFood favouriteFood;
     private Activity favouriteActivity;
+    private int weight;
+    private String color;
+    private String breed;
 
-    public Animal(String name, int age, int healthLevel, int hungerLevel, int spiritMood, AnimalFood favouriteFood, Activity favouriteActivity) {
+    public Animal() {
+    }
+
+    public Animal(String name, int age, int healthLevel, int hungerLevel, int spiritMood,
+                  AnimalFood favouriteFood, Activity favouriteActivity, int weight, String color, String breed) {
         this.name = name;
         this.age = age;
         this.healthLevel = healthLevel;
@@ -19,7 +26,14 @@ public class Animal {
         this.spiritMood = spiritMood;
         this.favouriteFood = favouriteFood;
         this.favouriteActivity = favouriteActivity;
+        this.weight = weight;
+        this.color = color;
+        this.breed = breed;
     }
+
+    public abstract void eat(int quantity);
+
+    public abstract void sleep();
 
     public String getName() {
         return name;
@@ -77,6 +91,30 @@ public class Animal {
         this.favouriteActivity = favouriteActivity;
     }
 
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
     @Override
     public String toString() {
         return "Animal{" +
@@ -87,6 +125,9 @@ public class Animal {
                 ", spiritMood=" + spiritMood +
                 ", favouriteFood=" + favouriteFood +
                 ", favouriteActivity=" + favouriteActivity +
+                ", weight=" + weight +
+                ", color='" + color + '\'' +
+                ", breed='" + breed + '\'' +
                 '}';
     }
 
@@ -94,14 +135,19 @@ public class Animal {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Animal animal)) return false;
-        return age == animal.age && healthLevel == animal.healthLevel
-                && hungerLevel == animal.hungerLevel && spiritMood == animal.spiritMood
-                && Objects.equals(name, animal.name) && Objects.equals(favouriteFood, animal.favouriteFood)
-                && Objects.equals(favouriteActivity, animal.favouriteActivity);
+        return getAge() == animal.getAge() && getHealthLevel() == animal.getHealthLevel()
+                && getHungerLevel() == animal.getHungerLevel()
+                && getSpiritMood() == animal.getSpiritMood()
+                && getWeight() == animal.getWeight() && Objects.equals(getName(),
+                animal.getName()) && Objects.equals(getFavouriteFood(),
+                animal.getFavouriteFood()) && getFavouriteActivity() == animal.getFavouriteActivity()
+                && Objects.equals(getColor(), animal.getColor()) && Objects.equals(getBreed(), animal.getBreed());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age, healthLevel, hungerLevel, spiritMood, favouriteFood, favouriteActivity);
+        return Objects.hash(getName(), getAge(), getHealthLevel(),
+                getHungerLevel(), getSpiritMood(), getFavouriteFood(),
+                getFavouriteActivity(), getWeight(), getColor(), getBreed());
     }
 }

@@ -1,7 +1,6 @@
 package org.example;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Objects;
 
 public class AnimalFood {
@@ -9,9 +8,12 @@ public class AnimalFood {
     private int price;
     private int quantity;
     private LocalDate expirationDate;
-    private boolean stockAvailability;
+    private String stockAvailability;
 
-    public AnimalFood(String name, int price, int quantity, LocalDate expirationDate, boolean stockAvailability) {
+    public AnimalFood() {
+    }
+
+    public AnimalFood(String name, int price, int quantity, LocalDate expirationDate, String stockAvailability) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
@@ -51,11 +53,11 @@ public class AnimalFood {
         this.expirationDate = expirationDate;
     }
 
-    public boolean isStockAvailability() {
+    public String isStockAvailability() {
         return stockAvailability;
     }
 
-    public void setStockAvailability(boolean stockAvailability) {
+    public void setStockAvailability(String stockAvailability) {
         this.stockAvailability = stockAvailability;
     }
 

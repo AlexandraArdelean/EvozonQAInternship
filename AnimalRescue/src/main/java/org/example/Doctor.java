@@ -2,14 +2,19 @@ package org.example;
 
 import java.util.Objects;
 
-public class VetMed {
+public abstract class Doctor {
     private String name;
     private String specialization;
 
-    public VetMed(String name, String specialization) {
+    public Doctor() {
+    }
+
+    public Doctor(String name, String specialization) {
         this.name = name;
         this.specialization = specialization;
     }
+
+    public abstract void givesConsult();
 
     public String getName() {
         return name;
@@ -38,7 +43,7 @@ public class VetMed {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof VetMed vetMed)) return false;
+        if (!(o instanceof Doctor vetMed)) return false;
         return Objects.equals(getName(), vetMed.getName())
                 && Objects.equals(getSpecialization(), vetMed.getSpecialization());
     }
