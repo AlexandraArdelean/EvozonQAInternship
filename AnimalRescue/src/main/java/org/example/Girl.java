@@ -13,8 +13,7 @@ public class Girl extends AnimalRescuer {
         System.out.println(animal.getName() + " was very unhappy, weak and refused to eat.");
         if (animal.getSpiritMood() > 0) {
             System.out.println(getName() + " rescued " + animal.getName() + " from shelter and bought "
-                    + animalFood.getName() + " which is his favourite type of food.");
-            animal.eat(150);
+                    + animalFood.getName() + " which is dog's favourite type of food.");
 
         } else {
             System.out.println(getName() + " played " + Activity.BALL + " and promised to return the next day.");
@@ -23,11 +22,11 @@ public class Girl extends AnimalRescuer {
 
     @Override
     public void feedAnimal(Animal animal, AnimalFood animalFood) {
-        System.out.println(animal.getName() + " was very shy at first, but " + getName() + " fed him his favourite food (" +
-                animalFood.getName() + ").");
+        System.out.println(animal.getName() + " was very shy at first, but " + getName() + " gave dog's favourite food (" +
+                animalFood.getName() + ") and everything was better.");
         System.out.println("After a while " + animal.getName() + " gained weight and started to play more with "
                 + getName() + ".");
-        System.out.println(animal.getName() + " new weight is: " + animal.getWeight());
+        System.out.println(animal.getName() + "'s new weight is: " + animal.getWeight());
         System.out.println("The hunger level is at: " + animal.getHungerLevel()
                 + " and spirit mood is at " + animal.getSpiritMood() + " which is an improvement from the first day.");
     }

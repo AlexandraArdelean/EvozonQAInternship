@@ -6,12 +6,13 @@ public class Dog extends Animal {
 
     @Override
     public void eat(int quantity) {
-        while (getHungerLevel() > 3) {
+        if (quantity > 150) {
             setWeight(getWeight() + 2);
+        }
             setSpiritMood(getSpiritMood() + 1);
             setHungerLevel(getHungerLevel() - 1);
             setHealthLevel(getHealthLevel() + 1);
-        }
+
 
     }
 

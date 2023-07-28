@@ -28,7 +28,7 @@ public class Main {
         dog.setHealthLevel(10);
         dog.setHungerLevel(8);
         dog.setWeight(35);
-        dog.setSpiritMood(10);
+        dog.setSpiritMood(2);
         dog.setBreed("Golden Retriever");
         dog.setColor("white");
         dog.setFavouriteFood(dogFood);
@@ -36,6 +36,7 @@ public class Main {
         System.out.println("My dog's name is: " + dog.getName() + " she's a " + dog.getBreed() +
                 " and has " + dog.getAge() + " years old." + " Her favourite activity is playing "
                 + dog.getFavouriteActivity().getName());
+
         dog.sleep();
         dog.jumpingAround();
 
@@ -58,7 +59,7 @@ public class Main {
 
         Veterinary vet = new Veterinary();
         vet.setName("Bob");
-        vet.setSpecialization(" dog's shelter veterinary.");
+        vet.setSpecialization(" dog's shelter veterinary");
         System.out.println(vet.getName() + " is " + vet.getSpecialization());
 
         Person person = new Person();
@@ -92,6 +93,7 @@ public class Main {
         annie.setMoneyAmount(250);
 
         annie.rescueAnimal(dog, dogFood);
+        dog.eat(230);
         annie.feedAnimal(dog, dogFood);
         annie.goToVet(dog, vet);
         annie.doExercises(dog);
