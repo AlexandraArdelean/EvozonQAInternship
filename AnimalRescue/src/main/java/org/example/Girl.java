@@ -60,10 +60,8 @@ public class Girl extends AnimalRescuer {
                     animal.getName() + " slept near her.");
             animal.sleep();
             System.out.println("After " + animal.getName() + "'s sleep was over, they went to the garden and played " +
-                    Activity.BALL.getName() + ". In the evening they went for a walk again.");
+                    Activity.BALL.getName() + ". In the evening they went for a walk again. An in time, everything was back to normal.");
         }
-
-
     }
 
 }
