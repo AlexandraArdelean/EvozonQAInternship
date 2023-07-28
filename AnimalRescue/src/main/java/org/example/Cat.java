@@ -4,7 +4,6 @@ public class Cat extends Animal {
     public Cat() {
     }
 
-
     @Override
     public void eat(int quantity) {
         setWeight(getWeight() + 1);
@@ -22,7 +21,7 @@ public class Cat extends Animal {
         System.out.println("Meow! Meow!");
     }
 
-    public void snoozing() {
+    public void snooze() {
         System.out.println("I just ate so I am snoozing on the couch!");
     }
 

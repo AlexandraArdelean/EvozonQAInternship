@@ -4,11 +4,6 @@ public class Dog extends Animal {
     public Dog() {
     }
 
-    public Dog(String name, int age, int healthLevel, int hungerLevel, int spiritMood, AnimalFood favouriteFood,
-               Activity favouriteActivity, int weight, String color, String breed) {
-        super(name, age, healthLevel, hungerLevel, spiritMood, favouriteFood, favouriteActivity, weight, color, breed);
-    }
-
     @Override
     public void eat(int quantity) {
         while (getHungerLevel() > 3) {

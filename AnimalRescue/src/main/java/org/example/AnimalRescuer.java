@@ -8,15 +8,10 @@ public abstract class AnimalRescuer {
 
     public AnimalRescuer() {
     }
-
-    public AnimalRescuer(String name, int moneyAmount) {
-        this.name = name;
-        this.moneyAmount = moneyAmount;
-    }
-    public abstract void goToVet();
-    public abstract void rescueAnimal();
-    public abstract void feedAnimal();
-    public abstract void doExercises();
+    public abstract void goToVet(Animal animal, Doctor doctor);
+    public abstract void rescueAnimal(Animal animal, AnimalFood animalFood);
+    public abstract void feedAnimal(Animal animal, AnimalFood animalFood);
+    public abstract void doExercises(Animal animal);
 
     public String getName() {
         return name;

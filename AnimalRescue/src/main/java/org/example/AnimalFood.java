@@ -13,13 +13,6 @@ public class AnimalFood {
     public AnimalFood() {
     }
 
-    public AnimalFood(String name, int price, int quantity, LocalDate expirationDate, String stockAvailability) {
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
-        this.expirationDate = expirationDate;
-        this.stockAvailability = stockAvailability;
-    }
 
     public String getName() {
         return name;
