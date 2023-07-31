@@ -13,12 +13,14 @@ public abstract class Animal {
     private int weight;
     private String color;
     private String breed;
+    private String typeOfAnimal;
 
     public Animal() {
     }
 
     public Animal(String name, int age, int healthLevel, int hungerLevel, int spiritMood,
-                  AnimalFood favouriteFood, Activity favouriteActivity, int weight, String color, String breed) {
+                  AnimalFood favouriteFood, Activity favouriteActivity, int weight, String color, String breed,
+                  String typeOfAnimal ) {
         this.name = name;
         this.age = age;
         this.healthLevel = healthLevel;
@@ -29,6 +31,7 @@ public abstract class Animal {
         this.weight = weight;
         this.color = color;
         this.breed = breed;
+        this.typeOfAnimal = typeOfAnimal;
     }
 
     public abstract void eat(int quantity);
@@ -115,6 +118,14 @@ public abstract class Animal {
         this.breed = breed;
     }
 
+    public String getTypeOfAnimal() {
+        return typeOfAnimal;
+    }
+
+    public void setTypeOfAnimal(String typeOfAnimal) {
+        this.typeOfAnimal = typeOfAnimal;
+    }
+
     @Override
     public String toString() {
         return "Animal{" +
@@ -128,6 +139,7 @@ public abstract class Animal {
                 ", weight=" + weight +
                 ", color='" + color + '\'' +
                 ", breed='" + breed + '\'' +
+                ", typeOfAnimal='" + typeOfAnimal + '\'' +
                 '}';
     }
 
@@ -138,16 +150,15 @@ public abstract class Animal {
         return getAge() == animal.getAge() && getHealthLevel() == animal.getHealthLevel()
                 && getHungerLevel() == animal.getHungerLevel()
                 && getSpiritMood() == animal.getSpiritMood()
-                && getWeight() == animal.getWeight() && Objects.equals(getName(),
-                animal.getName()) && Objects.equals(getFavouriteFood(),
-                animal.getFavouriteFood()) && getFavouriteActivity() == animal.getFavouriteActivity()
-                && Objects.equals(getColor(), animal.getColor()) && Objects.equals(getBreed(), animal.getBreed());
+                && getWeight() == animal.getWeight() && Objects.equals(getName(), animal.getName())
+                && Objects.equals(getFavouriteFood(), animal.getFavouriteFood())
+                && getFavouriteActivity() == animal.getFavouriteActivity()
+                && Objects.equals(getColor(), animal.getColor()) && Objects.equals(getBreed(), animal.getBreed())
+                && Objects.equals(getTypeOfAnimal(), animal.getTypeOfAnimal());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getAge(), getHealthLevel(),
-                getHungerLevel(), getSpiritMood(), getFavouriteFood(),
-                getFavouriteActivity(), getWeight(), getColor(), getBreed());
+        return Objects.hash(getName(), getAge(), getHealthLevel(), getHungerLevel(), getSpiritMood(), getFavouriteFood(), getFavouriteActivity(), getWeight(), getColor(), getBreed(), getTypeOfAnimal());
     }
 }

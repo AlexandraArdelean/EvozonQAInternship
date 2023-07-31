@@ -16,11 +16,11 @@ public class Main {
                 "kg is " + dogFood.isStockAvailability());
 
         AnimalFood catFood = new AnimalFood();
-        dogFood.setName("Purina");
-        dogFood.setPrice(90);
-        dogFood.setExpirationDate(LocalDate.of(2026, 11, 30));
-        dogFood.setQuantity(8);
-        dogFood.setStockAvailability("enough for a month");
+        catFood.setName("Purina");
+        catFood.setPrice(90);
+        catFood.setExpirationDate(LocalDate.of(2026, 11, 30));
+        catFood.setQuantity(8);
+        catFood.setStockAvailability("enough for a month");
 
         Dog dog = new Dog();
         dog.setName("Lola");
@@ -29,10 +29,11 @@ public class Main {
         dog.setHungerLevel(8);
         dog.setWeight(35);
         dog.setSpiritMood(2);
-        dog.setBreed("Golden Retriever");
+        dog.setBreed("golden retriever");
         dog.setColor("white");
         dog.setFavouriteFood(dogFood);
         dog.setFavouriteActivity(Activity.FETCH);
+        dog.setTypeOfAnimal("dog");
         System.out.println("My dog's name is: " + dog.getName() + " she's a " + dog.getBreed() +
                 " and has " + dog.getAge() + " years old." + " Her favourite activity is playing "
                 + dog.getFavouriteActivity().getName());
@@ -43,7 +44,7 @@ public class Main {
         Cat kittie = new Cat();
         kittie.setName("Kitty");
         kittie.setAge(2);
-        kittie.setBreed("Russian blue");
+        kittie.setBreed("russian blue");
         kittie.setColor("grey");
         kittie.setWeight(3);
         kittie.setSpiritMood(2);
@@ -51,6 +52,7 @@ public class Main {
         kittie.setFavouriteActivity(Activity.SNOOZE);
         kittie.setFavouriteFood(catFood);
         kittie.setHealthLevel(8);
+        kittie.setTypeOfAnimal("cat");
         System.out.println("My cat's name is: " + kittie.getName() + " she's " + kittie.getBreed() + ". Kitty's favourite activity is to "
                 + kittie.getFavouriteActivity().getName() + " out.");
         kittie.sleep();
@@ -88,7 +90,7 @@ public class Main {
 
         System.out.println();
         // story telling
-        Girl annie = new Girl();
+        Adopter annie = new Adopter();
         annie.setName("Annie");
         annie.setMoneyAmount(250);
 
@@ -97,6 +99,19 @@ public class Main {
         annie.feedAnimal(dog, dogFood);
         annie.goToVet(dog, vet);
         annie.doExercises(dog);
+
+
+        System.out.println();
+        System.out.println();
+
+        Adopter maria = new Adopter();
+        maria.setName("Maria");
+        maria.setMoneyAmount(300);
+
+        maria.rescueAnimal(kittie, catFood);
+        maria.feedAnimal(kittie,catFood);
+        maria.goToVet(kittie, vet);
+        maria.doExercises(kittie);
 
 
     }
