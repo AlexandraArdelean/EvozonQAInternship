@@ -13,7 +13,7 @@ public class RegisterTest {
         driver.findElement(By.id("firstname")).sendKeys("Alexa");
         driver.findElement(By.id("middlename")).sendKeys("Ioana");
         driver.findElement(By.id("lastname")).sendKeys("Pop");
-        driver.findElement(By.id("email_address")).sendKeys("alexaaioana@gmail.com");
+        driver.findElement(By.id("email_address")).sendKeys("alexaioana@gmail.com");
         driver.findElement(By.id("password")).sendKeys("123456");
         driver.findElement(By.id("confirmation")).sendKeys("123456");
         driver.findElement(By.cssSelector("#form-validate > div.buttons-set > button")).click();

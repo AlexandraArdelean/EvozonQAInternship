@@ -32,4 +32,25 @@ public class AccountTest {
         driver.close();
     }
 
+    public void editAccountAddressBook() {
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://qa2magento.dev.evozon.com/");
+        driver.manage().window().maximize();
+        driver.findElement(By.cssSelector("#header > div > div.skip-links > div > a")).click();
+        driver.findElement(By.cssSelector("#header-account > div > ul > li.last > a")).click();
+        driver.findElement(By.id("email")).sendKeys("test@gmail.com");
+        driver.findElement(By.id("pass")).sendKeys("123456");
+        driver.findElement(By.id("send2")).click();
+        driver.findElement(By.cssSelector(".dashboard div:nth-child(4) .col-1 .box-title a")).click();
+        driver.findElement(By.id("telephone")).sendKeys("0770789123");
+        driver.findElement(By.id("street_1")).sendKeys("Alabala nr.3");
+        driver.findElement(By.id("street_2")).sendKeys("Portocala nr. 5");
+        driver.findElement(By.id("city")).sendKeys("New York");
+        driver.findElement(By.id("region_id")).click();
+        driver.findElement(By.cssSelector("#region_id > option:nth-child(44)")).click();
+        driver.findElement(By.id("zip")).sendKeys("NY-125800");
+        driver.findElement(By.cssSelector("[title = 'Save Address']")).click();
+        driver.close();
+
+    }
 }
