@@ -1,10 +1,9 @@
 package org.example;
 
 
-import java.time.LocalDate;
-import java.util.Objects;
-
 public class Veterinary extends Doctor {
+    private String dayOfWeek;
+
     public Veterinary() {
     }
 
@@ -13,7 +12,22 @@ public class Veterinary extends Doctor {
     }
 
     @Override
-    public void givesConsult() {
+    public void givesConsult(String day) {
+        if (getDayOfWeek().equalsIgnoreCase("Friday")) {
+            System.out.println("My work days are from Monday to Thursday! See you on Monday morning! :)");
 
+        } else {
+            System.out.println("Meet me at the office!");
+        }
+
+    }
+
+
+    public String getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    public void setDayOfWeek(String dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
     }
 }

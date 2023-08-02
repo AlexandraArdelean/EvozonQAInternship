@@ -61,7 +61,8 @@ public class Main {
 
         Veterinary vet = new Veterinary();
         vet.setName("Bob");
-        vet.setSpecialization(" dog's shelter veterinary");
+        vet.setSpecialization("shelter's veterinary");
+        vet.setDayOfWeek("Monday");
         System.out.println(vet.getName() + " is " + vet.getSpecialization());
 
         Person person = new Person();
@@ -71,10 +72,9 @@ public class Main {
 
         Surgeon surgeon = new Surgeon();
         surgeon.setName("Derek");
-        surgeon.setSpecialization("brain surgeon");
-        surgeon.setDay("Monday");
+        surgeon.setSpecialization("neurologist");
+        surgeon.setDay("Wednesday");
         System.out.println(surgeon.getName() + " is a " + surgeon.getSpecialization() + " doctor.");
-        surgeon.givesConsult();
 
         Cow cow = new Cow();
         cow.setName("Bumba");
@@ -107,8 +107,8 @@ public class Main {
         Adopter maria = new Adopter();
         maria.setName("Maria");
         maria.setMoneyAmount(300);
-
         maria.rescueAnimal(kittie, catFood);
+        kittie.eat(12);
         maria.feedAnimal(kittie,catFood);
         maria.goToVet(kittie, vet);
         maria.doExercises(kittie);

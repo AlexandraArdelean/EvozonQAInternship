@@ -8,17 +8,19 @@ public class Dog extends Animal {
     public void eat(int quantity) {
         if (quantity > 150) {
             setWeight(getWeight() + 2);
-        }
-            setSpiritMood(getSpiritMood() + 1);
-            setHungerLevel(getHungerLevel() - 1);
+            setSpiritMood(getSpiritMood() + 2);
+            setHungerLevel(getHungerLevel() - 2);
             setHealthLevel(getHealthLevel() + 1);
-
+        } else {
+            setSpiritMood(getSpiritMood() + 1);
+            setHungerLevel(getHungerLevel() + 1);
+        }
 
     }
 
     @Override
     public void sleep() {
-        System.out.println(getName() + " is sleeping: ZzZ ZzZzz");
+        System.out.println(" ZzZ ZzZzz");
     }
 
 
