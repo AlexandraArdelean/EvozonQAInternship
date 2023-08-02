@@ -35,12 +35,22 @@ public class CartTest {
         driver.findElement(By.id("option27")).click();
         driver.findElement(By.id("option73")).click();
         driver.findElement(By.cssSelector(".add-to-cart-buttons")).click();
-        driver.findElement(By.id("search")).sendKeys("necklace");
-        driver.findElement(By.cssSelector("[type = 'submit']")).click();
-        driver.findElement(By.cssSelector("body > div > div > div.main-container.col3-layout > div > div.col-wrapper " +
-                "> div.col-main > div.category-products > ul > li:nth-child(1) > div > div.actions > button > span > span")).click();
-        driver.close();
+        String message = driver.findElement(By.cssSelector("body > div > div > div.main-container.col1-layout > div > div > " +
+                "div.cart.display-single-price > ul > li > ul > li > span")).getText();
+        if (message.equalsIgnoreCase("Lafayette Convertible Dress was added to your shopping cart.")) {
 
+            driver.findElement(By.id("search")).sendKeys("necklace");
+            driver.findElement(By.cssSelector("[type = 'submit']")).click();
+            driver.findElement(By.cssSelector("body > div > div > div.main-container.col3-layout > div > div.col-wrapper " +
+                    "> div.col-main > div.category-products > ul > li:nth-child(1) > div > div.actions > button > span > span")).click();
+            String message2 = driver.findElement(By.cssSelector("body > div > div > div.main-container.col1-layout >" +
+                    " div > div > div.cart.display-single-price > ul > li > ul > li > span")).getText();
+            if (message2.equalsIgnoreCase("Pearl Necklace was added to your shopping cart.")) ;
+            System.out.println("Items were successfully added to your shopping cart! :)");
+        } else {
+            System.out.println("Something went wrong! Redo steps please! :)");
+        }
+        driver.close();
 
     }
 }

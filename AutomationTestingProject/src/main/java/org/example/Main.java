@@ -1,7 +1,7 @@
 package org.example;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         LoginTest loginTest = new LoginTest();
       //  loginTest.loginWithValidCredentials();
@@ -14,7 +14,14 @@ public class Main {
 
         CartTest cartTest = new CartTest();
     //    cartTest.addOneItemToCart();
-        cartTest.addTwoItemsToCart();
+       // cartTest.addTwoItemsToCart();
+
+        AccountTest accountTest = new AccountTest();
+      //  accountTest.editContactInformation();
+        WomenCategoryTest womenCategoryTest = new WomenCategoryTest();
+     //   womenCategoryTest.performHoverOverCategory();
+        womenCategoryTest.sortItemsBySize();
+
 
     }
 }
