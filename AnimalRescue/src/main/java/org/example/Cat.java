@@ -6,10 +6,14 @@ public class Cat extends Animal {
 
     @Override
     public void eat(int quantity) {
-        setWeight(getWeight() + 1);
-        setHungerLevel(getHungerLevel() - 1);
-        setSpiritMood(getSpiritMood() + 1);
-        System.out.println("Hap! Hap! Hap!");
+        if (quantity > 10) {
+            setWeight(getWeight() + 2);
+            setHungerLevel(getHungerLevel() - 2);
+            setSpiritMood(getSpiritMood() + 2);
+        } else {
+            setHealthLevel(getHungerLevel() - 1);
+            setSpiritMood(getSpiritMood() + 1);
+        }
     }
 
     @Override

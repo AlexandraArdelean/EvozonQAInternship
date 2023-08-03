@@ -14,7 +14,7 @@ public abstract class Doctor {
         this.specialization = specialization;
     }
 
-    public abstract void givesConsult();
+    public abstract void givesConsult(String day);
 
     public String getName() {
         return name;
