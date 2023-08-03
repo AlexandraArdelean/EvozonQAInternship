@@ -1,56 +1,45 @@
 package org.example;
 
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class CartTest {
+@RunWith(JUnit4.class)
+public class CartTest extends BaseTest {
+
+    @Test
     public void addOneItemToCart() {
-        WebDriver driver = new ChromeDriver();
-        driver.get("http://qa2magento.dev.evozon.com/");
+        openHomepage();
         driver.findElement(By.id("search")).sendKeys("earrings");
-        driver.findElement(By.cssSelector("#search_mini_form > div.input-box > button")).click();
-        driver.findElement(By.cssSelector("body > div > div > div.main-container.col3-layout > div > div.col-wrapper >" +
-                " div.col-main > div.category-products > ul > li:nth-child(2) > div > div.actions > button > span > span")).click();
-        String successMessage = driver.findElement(By.cssSelector("body > div > div > div.main-container.col1-layout >" +
-                " div > div > div.cart.display-single-price > ul > li > ul > li > span")).getText();
+        driver.findElement(By.cssSelector(".input-box [title='Search']")).click();
+        driver.findElements(By.cssSelector(".category-products .products-grid li .actions button")).get(0).click();
+        String successMessage = driver.findElement(By.cssSelector(".success-msg span")).getText();
+        Assert.assertEquals("Swing Time Earrings was added to your shopping cart.", successMessage);
 
-        if (successMessage.equalsIgnoreCase("Swing Time Earrings was added to your shopping cart.")) {
-            System.out.println("Add item to cart was a success!!! :)");
-        } else {
-            System.out.println("Something happened! :( Please try again! ");
-        }
 
-        driver.close();
     }
 
+    @Test
     public void addTwoItemsToCart() {
-        WebDriver driver = new ChromeDriver();
-        driver.get("http://qa2magento.dev.evozon.com/");
-        driver.manage().window().maximize();
+        openHomepage();
         driver.findElement(By.id("search")).sendKeys("dress");
         driver.findElement(By.cssSelector("[type = 'submit']")).click();
-        driver.findElement(By.cssSelector("body > div > div > div.main-container.col3-layout > div > div.col-wrapper >" +
-                " div.col-main > div.category-products > ul > li:nth-child(3) > div > div.actions > a")).click();
+        driver.findElements(By.cssSelector("[title= 'View Details']")).get(2).click();
         driver.findElement(By.id("option27")).click();
         driver.findElement(By.id("option73")).click();
         driver.findElement(By.cssSelector(".add-to-cart-buttons")).click();
-        String message = driver.findElement(By.cssSelector("body > div > div > div.main-container.col1-layout > div > div > " +
-                "div.cart.display-single-price > ul > li > ul > li > span")).getText();
+        String message = driver.findElement(By.cssSelector(".success-msg span")).getText();
         if (message.equalsIgnoreCase("Lafayette Convertible Dress was added to your shopping cart.")) {
-
             driver.findElement(By.id("search")).sendKeys("necklace");
             driver.findElement(By.cssSelector("[type = 'submit']")).click();
-            driver.findElement(By.cssSelector("body > div > div > div.main-container.col3-layout > div > div.col-wrapper " +
-                    "> div.col-main > div.category-products > ul > li:nth-child(1) > div > div.actions > button > span > span")).click();
-            String message2 = driver.findElement(By.cssSelector("body > div > div > div.main-container.col1-layout >" +
-                    " div > div > div.cart.display-single-price > ul > li > ul > li > span")).getText();
-            if (message2.equalsIgnoreCase("Pearl Necklace was added to your shopping cart.")) ;
-            System.out.println("Items were successfully added to your shopping cart! :)");
-        } else {
-            System.out.println("Something went wrong! Redo steps please! :)");
-        }
-        driver.close();
+            driver.findElements(By.cssSelector(".actions [title ='Add to Cart']")).get(0).click();
+            String message2 = driver.findElement(By.cssSelector(".success-msg")).getText();
+            Assert.assertEquals("Pearl Necklace was added to your shopping cart.", message2);
 
+        }
     }
 }
