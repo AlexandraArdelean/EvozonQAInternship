@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LogoutTest {
     public void logout() {
+
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://qa2magento.dev.evozon.com/");

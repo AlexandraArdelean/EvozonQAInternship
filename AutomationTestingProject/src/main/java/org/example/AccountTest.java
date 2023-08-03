@@ -9,8 +9,8 @@ public class AccountTest {
         WebDriver driver = new ChromeDriver();
         driver.get("http://qa2magento.dev.evozon.com/");
         driver.manage().window().maximize();
-        driver.findElement(By.cssSelector("#header > div > div.skip-links > div > a")).click();
-        driver.findElement(By.cssSelector("#header-account > div > ul > li.last > a")).click();
+        driver.findElement(By.cssSelector(".account-cart-wrapper .skip-account")).click();
+        driver.findElement(By.cssSelector("[title = 'Log In']")).click();
         driver.findElement(By.id("email")).sendKeys("test@gmail.com");
         driver.findElement(By.id("pass")).sendKeys("123456");
         driver.findElement(By.id("send2")).click();
