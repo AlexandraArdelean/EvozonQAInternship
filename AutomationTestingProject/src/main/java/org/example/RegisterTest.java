@@ -14,7 +14,7 @@ public class RegisterTest extends BaseTest {
         driver.findElement(By.id("firstname")).sendKeys("Alexa");
         driver.findElement(By.id("middlename")).sendKeys("Ioana");
         driver.findElement(By.id("lastname")).sendKeys("Pop");
-        driver.findElement(By.id("email_address")).sendKeys("alexaioanaa@gmail.com");
+        driver.findElement(By.id("email_address")).sendKeys("alexioanaa@gmail.com");
         driver.findElement(By.id("password")).sendKeys("123456");
         driver.findElement(By.id("confirmation")).sendKeys("123456");
         driver.findElement(By.cssSelector(".buttons-set [title = 'Register']")).click();
