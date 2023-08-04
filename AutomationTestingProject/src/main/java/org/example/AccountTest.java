@@ -1,16 +1,20 @@
 package org.example;
 
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-public class AccountTest {
+
+
+public class AccountTest extends BaseTest {
+
+    @Test
     public void editContactInformation() {
-        WebDriver driver = new ChromeDriver();
-        driver.get("http://qa2magento.dev.evozon.com/");
-        driver.manage().window().maximize();
-        driver.findElement(By.cssSelector("#header > div > div.skip-links > div > a")).click();
-        driver.findElement(By.cssSelector("#header-account > div > ul > li.last > a")).click();
+        driver.findElement(By.cssSelector(".account-cart-wrapper .skip-account")).click();
+        driver.findElement(By.cssSelector("[title = 'Log In']")).click();
         driver.findElement(By.id("email")).sendKeys("test@gmail.com");
         driver.findElement(By.id("pass")).sendKeys("123456");
         driver.findElement(By.id("send2")).click();
@@ -24,20 +28,15 @@ public class AccountTest {
         driver.findElement(By.id("current_password")).sendKeys("123456");
         driver.findElement(By.cssSelector("[title = 'Save']")).click();
         String successMessage = driver.findElement(By.cssSelector(".success-msg")).getText();
-        if (successMessage.equalsIgnoreCase("The account information has been saved."))
-            System.out.println("Changes were made successfully!!");
-        else
-            System.out.println("Something went really wrong!!! :(");
+        Assert.assertEquals("The account information has been saved.", successMessage);
 
-        driver.close();
     }
 
+
+    @Test
     public void editAccountAddressBook() {
-        WebDriver driver = new ChromeDriver();
-        driver.get("http://qa2magento.dev.evozon.com/");
-        driver.manage().window().maximize();
-        driver.findElement(By.cssSelector("#header > div > div.skip-links > div > a")).click();
-        driver.findElement(By.cssSelector("#header-account > div > ul > li.last > a")).click();
+        driver.findElement(By.cssSelector(".account-cart-wrapper .skip-account")).click();
+        driver.findElement(By.cssSelector("[title = 'Log In']")).click();
         driver.findElement(By.id("email")).sendKeys("test@gmail.com");
         driver.findElement(By.id("pass")).sendKeys("123456");
         driver.findElement(By.id("send2")).click();
@@ -50,7 +49,6 @@ public class AccountTest {
         driver.findElement(By.cssSelector("#region_id > option:nth-child(44)")).click();
         driver.findElement(By.id("zip")).sendKeys("NY-125800");
         driver.findElement(By.cssSelector("[title = 'Save Address']")).click();
-        driver.close();
 
     }
 }
