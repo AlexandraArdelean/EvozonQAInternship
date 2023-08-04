@@ -73,8 +73,19 @@ public class Main {
         logicalOp.copyFromGivenArray(initialArray,copiedArray);
         System.out.println("Copied array is: " + Arrays.toString(copiedArray));
 
+        // Arrays extra
+        // exercise 1
+        System.out.println("Arrays- extra");
+        System.out.println("Exercise 1");
+        System.out.println(logicalOp.returnSecondNumber(initialArray));
+
+        System.out.println("Exercise 2");
+        System.out.println(Arrays.toString(logicalOp.insertNewElement(initialArray, 108)));
 
     }
+
+
+
 
 
 

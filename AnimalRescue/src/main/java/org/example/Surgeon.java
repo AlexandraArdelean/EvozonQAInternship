@@ -14,7 +14,7 @@ public class Surgeon extends Doctor{
     }
 
     @Override
-    public void givesConsult() {
+    public void givesConsult(String day) {
         if (day.equals("Monday")){
             System.out.println("Not in the office!");
         } else if (day.equals("Tuesday")){

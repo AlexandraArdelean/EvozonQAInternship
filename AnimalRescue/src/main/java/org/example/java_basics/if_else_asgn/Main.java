@@ -1,7 +1,5 @@
 package org.example.java_basics.if_else_asgn;
 
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();

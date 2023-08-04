@@ -140,4 +140,23 @@ public class LogicalOp {
         }
     }
 
+    // Arrays extra
+    // 1. Creati o metoda care sa returneze al doilea cel mai mic numar dintr-un array.
+    public int returnSecondNumber(int[] givenArray) {
+        Arrays.sort(givenArray);
+        return givenArray[1];
+    }
+
+    // 2. Creati o metoda care insereze un element pe o pozitie specifica intr-un array.
+    //TODO
+
+    public int[] insertNewElement(int[] givenArray, int num) {
+        for (int i = 0; i < givenArray.length; i++) {
+            if (givenArray[i] % 5 ==0) {
+                givenArray[i] = num;
+            }
+        }
+        return givenArray;
+    }
+
 }

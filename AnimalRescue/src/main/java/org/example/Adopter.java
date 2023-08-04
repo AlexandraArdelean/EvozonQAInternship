@@ -36,7 +36,6 @@ public class Adopter extends AnimalRescuer {
         System.out.println("One day " + getName() + " and " + animal.getName() + " went to "
                 + doctor.getName() + ", the " + doctor.getSpecialization()
                 + " and asked if " + animal.getName() + " needs vaccines.");
-        doctor.givesConsult();
 
         if (animal.getAge() > 0) {
             System.out.println(animal.getName() + " needs to do the annual vaccines. ");
