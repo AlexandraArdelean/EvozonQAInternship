@@ -1,10 +1,9 @@
-package org.example;
+package org.example.test;
 
+import org.example.test.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WishlistTest extends BaseTest {
     @Test

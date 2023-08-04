@@ -1,12 +1,11 @@
-package org.example;
+package org.example.test;
 
+import org.example.test.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 @RunWith(JUnit4.class)
 public class CartTest extends BaseTest {
