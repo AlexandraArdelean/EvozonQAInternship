@@ -1,23 +1,24 @@
 package org.example.test;
 
-import org.example.test.BaseTest;
+import org.example.utils.Constants;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
+
 
 public class WishlistTest extends BaseTest {
     @Test
     public void addItemToWishlist() {
-        driver.findElement(By.cssSelector(".account-cart-wrapper .skip-account")).click();
-        driver.findElement(By.cssSelector("[title = 'Log In']")).click();
-        driver.findElement(By.id("email")).sendKeys("test@gmail.com");
-        driver.findElement(By.id("pass")).sendKeys("123456");
-        driver.findElement(By.id("send2")).click();
-        driver.findElement(By.id("search")).sendKeys("earrings");
-        driver.findElement(By.cssSelector(" [title='Search']")).click();
-        driver.findElements(By.cssSelector(".link-wishlist")).get(2).click();
-        String successMessage = driver.findElement(By.cssSelector(".success-msg")).getText();
-        Assert.assertEquals("Pearl Stud Earrings has been added to your wishlist. Click here to continue shopping.", successMessage);
+
+        homePage.clickAccountLink();
+        homePage.clickLoginLink();
+        loginPage.setEmailField(Constants.USER_EMAIL);
+        loginPage.setPasswordField(Constants.USER_PASSWORD);
+        loginPage.clickLoginButton();
+        accountPage.writeTextInSearchBar("earrings");
+        accountPage.clickOnSearch();
+        searchResultsPage.addProductToWishlist();
+        Assert.assertEquals("Pearl Stud Earrings has been added to your wishlist. " +
+                "Click here to continue shopping.", wishlistpage.getSuccessMsgWishlidt());
 
     }
 }

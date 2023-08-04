@@ -17,6 +17,11 @@ public class AccountPage extends BasePage {
     @FindBy(css = "a[title='Log Out']")
     private WebElement logoutLink;
 
+    @FindBy(id = "search")
+    private WebElement searchBar;
+    @FindBy(css = "[title='Search']")
+    private WebElement magnifyingGlassButton;
+
 
 
     public AccountPage(WebDriver driver) {
@@ -37,6 +42,14 @@ public class AccountPage extends BasePage {
 
     public void clickLogoutLink() {
         logoutLink.click();
+    }
+
+    public void writeTextInSearchBar(String product){
+        searchBar.sendKeys(product);
+    }
+
+    public void clickOnSearch(){
+        magnifyingGlassButton.click();
     }
 
 

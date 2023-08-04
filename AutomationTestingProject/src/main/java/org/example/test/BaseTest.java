@@ -17,6 +17,8 @@ public class BaseTest {
     protected AccountPage accountPage;
     protected RegisterPage registerPage;
     protected LogoutPage logoutPage;
+    protected SearchResultsPage searchResultsPage;
+    protected Wishlistpage wishlistpage;
 
 
     @Before
@@ -29,6 +31,8 @@ public class BaseTest {
         accountPage = new AccountPage(driver);
         registerPage = new RegisterPage(driver);
         logoutPage = new LogoutPage(driver);
+        searchResultsPage = new SearchResultsPage(driver);
+        wishlistpage = new Wishlistpage(driver);
         homePage.openHomepage();
     }
 
