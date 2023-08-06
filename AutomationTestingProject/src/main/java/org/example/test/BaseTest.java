@@ -20,6 +20,9 @@ public class BaseTest {
     protected SearchResultsPage searchResultsPage;
     protected Wishlistpage wishlistpage;
 
+    protected CartPage cartPage;
+    protected CheckoutPage checkoutPage;
+
 
     @Before
     public void openHomepage() {
@@ -33,6 +36,8 @@ public class BaseTest {
         logoutPage = new LogoutPage(driver);
         searchResultsPage = new SearchResultsPage(driver);
         wishlistpage = new Wishlistpage(driver);
+        cartPage = new CartPage(driver);
+        checkoutPage = new CheckoutPage(driver);
         homePage.openHomepage();
     }
 

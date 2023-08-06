@@ -15,6 +15,12 @@ public class HomePage extends BasePage {
     @FindBy(css = "[title = 'Register']")
     private WebElement registerLink;
 
+    @FindBy(id = "search")
+    private WebElement searchBar;
+
+    @FindBy(css = ".input-box [title='Search']")
+    private WebElement magnifyingGlassIcon;
+
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -37,5 +43,12 @@ public class HomePage extends BasePage {
         loginLink.click();
     }
 
+    public void searchForAProduct(String productName){
+        searchBar.sendKeys(productName);
+    }
+
+    public void clickOnSearchIcon(){
+        magnifyingGlassIcon.click();
+    }
 
 }

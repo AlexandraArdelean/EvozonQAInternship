@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class SearchResultsPage extends BasePage {
     @FindBy(css = ".link-wishlist")
@@ -15,8 +16,7 @@ public class SearchResultsPage extends BasePage {
     @FindBy(css = "li.item")
     private List<WebElement> webElementList;
 
-    @FindBy(css = ".success-msg span")
-    private WebElement addToCartSuccessMessage;
+
 
 
     public SearchResultsPage(WebDriver driver) {
@@ -49,20 +49,18 @@ public class SearchResultsPage extends BasePage {
         return false;
     }
 
-    public boolean addProductToCart(String productName) {
+    public boolean addProductToCart(String productName){
         Assert.assertNotNull(webElementList);
         for (WebElement element : webElementList) {
             if (element.findElement(By.cssSelector(".product-name")).getText().equalsIgnoreCase(productName)) {
                 element.findElement(By.cssSelector(".btn-cart")).click();
+                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 return true;
             }
         }
         return false;
     }
 
-    public String getSuccessMessageAddToCart(){
-        return addToCartSuccessMessage.getText();
-    }
 
 
     private double getPriceFromProduct(WebElement webElement) {
@@ -71,9 +69,10 @@ public class SearchResultsPage extends BasePage {
 //                getText());
         return Double.parseDouble(webElement.findElement(By.cssSelector(".price")).
                 getText().substring(1));
-
-
     }
+
+
+
 
 
 }

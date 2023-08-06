@@ -18,7 +18,7 @@ public class WishlistTest extends BaseTest {
         accountPage.clickOnSearch();
         searchResultsPage.addProductToWishlist();
         Assert.assertEquals("Pearl Stud Earrings has been added to your wishlist. " +
-                "Click here to continue shopping.", wishlistpage.getSuccessMsgWishlidt());
+                "Click here to continue shopping.", wishlistpage.getSuccessMsgWishlist());
 
     }
 }

@@ -13,7 +13,7 @@ public class Wishlistpage extends BasePage {
         super(driver);
     }
 
-    public String getSuccessMsgWishlidt() {
+    public String getSuccessMsgWishlist() {
         return successMsgWishlist.getText();
     }
 }

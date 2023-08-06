@@ -26,19 +26,6 @@ public class SearchTest extends BaseTest{
         searchResultsPage.isSortByPriceAscending();
     }
 
-    @Test
-    public void addProductToCart(){
-        homePage.clickAccountLink();
-        homePage.clickLoginLink();
-        loginPage.setEmailField(Constants.USER_EMAIL);
-        loginPage.setPasswordField(Constants.USER_PASSWORD);
-        loginPage.clickLoginButton();
-        accountPage.writeTextInSearchBar("neck");
-        accountPage.clickOnSearch();
-        Assert.assertTrue("Element not found!",searchResultsPage.addProductToCart("PEARL NECKLACE"));
-        Assert.assertEquals("Pearl Necklace was added to your shopping cart.",searchResultsPage.getSuccessMessageAddToCart());
-    }
-
 
 
 }
